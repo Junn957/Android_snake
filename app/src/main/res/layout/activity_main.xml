@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SCORE"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/MostScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MOSTSCORE"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="573dp"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:text="@string/promptstar"
+            android:textColor="#4CAF50"
+            android:textSize="25sp" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/isstar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Up"
+            android:layout_centerHorizontal="true"
+            android:background="@color/red"
+            android:text="@string/star" />
+
+        <Button
+            android:id="@+id/Up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@drawable/upbutton"
+            android:text="@string/UP" />
+
+        <Button
+            android:id="@+id/Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Up"
+            android:layout_toStartOf="@id/Up"
+            android:layout_toLeftOf="@id/Up"
+            android:background="@drawable/leftbutton"
+            android:text="@string/LEFT" />
+
+        <Button
+            android:id="@+id/Down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Left"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/downbutton"
+            android:text="@string/DOWN" />
+
+        <Button
+            android:id="@+id/Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Up"
+            android:layout_toEndOf="@id/Up"
+            android:layout_toRightOf="@id/Up"
+            android:background="@drawable/rightbutton"
+            android:text="@string/RIGHT" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
