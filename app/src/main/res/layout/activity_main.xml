@@ -26,7 +26,7 @@
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
-        android:layout_height="573dp"
+        android:layout_height="461dp"
         android:background="@color/black">
 
         <TextView
