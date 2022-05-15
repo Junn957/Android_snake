@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StarView"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="#27B2FF59"
     >
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="贪吃蛇小游戏"
+    android:textSize="40dp"
+    android:layout_marginTop="150dp"
+    android:textColor="@color/black"
+
+    >
+
+</TextView>
     <Button
         android:id="@+id/star_game"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stargame"
         android:layout_gravity="center"
-        android:layout_marginTop="350dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="50dp"
-        android:background="@drawable/star_button"/>
+        android:background="@drawable/star_button"
+        android:text="@string/stargame" />
+
     <Button
         android:id="@+id/MostBUtton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/historyscore"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/star_button"/>
+        android:layout_marginRight="50dp"
+        android:background="@drawable/star_button"
+        android:text="@string/historyscore" />
+
     <Button
         android:id="@+id/BackButton"
         android:layout_width="match_parent"
@@ -35,4 +51,5 @@
         android:layout_marginRight="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/star_button"/>
+
 </LinearLayout>

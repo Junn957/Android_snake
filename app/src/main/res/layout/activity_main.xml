@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#2340C4FF"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -26,7 +26,7 @@
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
-        android:layout_height="461dp"
+        android:layout_height="473dp"
         android:background="@color/black">
 
         <TextView
@@ -41,8 +41,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true">
+        android:layout_height="157dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center">
 
         <Button
             android:id="@+id/isstar"

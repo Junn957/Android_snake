@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                         //吃掉食物处理
                         if((images.getBitmapX()==images.getFoodX())&&(images.getBitmapY()==images.getFoodY())){
-                            images.setLenght(images.getLenght()+1);
+                            images.setLength(images.getLength()+1);
                             int FoodX=(int)(Math.random()*(weight/Macro.UNIT))*Macro.UNIT;
                             int FoodY=(int)(Math.random()*(height/Macro.UNIT))*Macro.UNIT;
                             if(FoodX==images.getBitmapX()&&FoodY==images.getBitmapY()){

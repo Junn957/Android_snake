@@ -13,7 +13,7 @@ public class Images extends View {
     private int FoodX,FoodY;
     private int[] snackX=new int[Macro.MAX_LENGTH];
     private int[] snackY=new int[Macro.MAX_LENGTH];
-    private int lenght;
+    private int length;
     private int direction;
     private boolean islive;
 
@@ -49,12 +49,12 @@ public class Images extends View {
         this.direction = direction;
     }
 
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
-    public void setLenght(int lenght) {
-        this.lenght = lenght;
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public int getBitmapX() {
@@ -88,11 +88,11 @@ public class Images extends View {
 
         snackX[0]=BitmapX;
         snackY[0]=BitmapY;
-        lenght=Macro.INIT_LENGHT;
+        length =Macro.INIT_LENGHT;
         direction=Macro.Right;
         islive=true;
 
-        for(int i=1;i<lenght;i++){
+        for(int i = 1; i< length; i++){
             snackX[i]=snackX[i-1]-Macro.UNIT;
             snackY[i]=snackY[i-1];
         }
@@ -178,17 +178,17 @@ public class Images extends View {
                 break;
         }
         //画出小蛇身体的位置
-        for(int i=1;i<lenght;i++) {
+        for(int i = 1; i< length; i++) {
             canvas.drawBitmap(bitmapbody, snackX[i], snackY[i], paint);
         }
         //小蛇咬住身体了
-        for(int i=1;i<lenght;i++){
+        for(int i = 1; i< length; i++){
             if(snackX[0]==snackX[i]&&snackY[0]==snackY[i]){
                 islive=false;
             }
         }
         //身体从最后一节向前一节位置移动
-        for(int i=lenght;i>0;i--){
+        for(int i = length; i>0; i--){
             snackX[i]=snackX[i-1];
             snackY[i]=snackY[i-1];
         }
