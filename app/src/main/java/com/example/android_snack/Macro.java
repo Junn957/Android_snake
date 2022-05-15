@@ -37,7 +37,7 @@ public class Macro {
     /**
      * The constant PERIOD：定时器启动的间隔时间
      */
-    public static final int PERIOD=500;
+    public static final int PERIOD=400;
     /**
      * The constant INIT_SNACKX：小蛇初始头部的X坐标
      */
@@ -49,15 +49,15 @@ public class Macro {
     /**
      * The constant INIT_FOODX：食物初始的X坐标
      */
-    public static final int INIT_FOODX=900;
+    public static final int INIT_FOODX=800;
     /**
      * The constant INIT_FOODY：食物初始的Y坐标
      */
-    public static final int INIT_FOODY=400;
+    public static final int INIT_FOODY=900;
     /**
      * The constant INIT_LENGHT：小蛇初始长度
      */
-    public static final int INIT_LENGHT=3;
+    public static final int INIT_LENGHT=4;
     /**
      * The constant IMAGE_HEAD_SIZE：小蛇头图片缩小倍数
      */
@@ -71,21 +71,21 @@ public class Macro {
      */
     public static final int SCORE_UNIT=10;
     /**
-     * The constant MAX_LENGHT：小蛇最大长度
+     * The constant MAX_LENGTH：小蛇最大长度
      */
-    public static final int MAX_LENGHT=900;
+    public static final int MAX_LENGTH =900;
     /**
-     * The constant MAX_LENGHT：小蛇吃到食物就会加速的基本单位
+     * The constant SPEED：小蛇是食物的初始速度
      */
     public static final int SPEED=30;
     /**
-     * The constant MAX_LENGHT：小蛇吃到食物就会加速的基本单位
+     * The constant FOOD：小蛇吃到食物就会加速的基本单位
      */
-    public static final int FOOD=30;
+    public static final int FOOD=20;
     /**
-     * The constant MAX_LENGHT：小蛇吃到食物就会加速的基本单位
+     * The constant MAX_SPEED：小蛇移动的最大速度
      */
-    public static final int MAX_DSPEED=400;
+    public static final int MAX_SPEED =300;
 
     /**
      * The constant SCORE：此局的分数显示

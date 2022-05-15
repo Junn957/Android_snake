@@ -6,14 +6,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.View;
 
 public class Images extends View {
     private int BitmapX,BitmapY;
     private int FoodX,FoodY;
-    private int[] snackX=new int[Macro.MAX_LENGHT];
-    private int[] snackY=new int[Macro.MAX_LENGHT];
+    private int[] snackX=new int[Macro.MAX_LENGTH];
+    private int[] snackY=new int[Macro.MAX_LENGTH];
     private int lenght;
     private int direction;
     private boolean islive;

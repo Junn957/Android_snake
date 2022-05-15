@@ -4,23 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.renderscript.ScriptC;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -84,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             score+=Macro.SCORE_UNIT;
                             if(score%Macro.FOOD==0){
                                 timer.cancel();
-                                if(time<Macro.MAX_DSPEED)
+                                if(time<Macro.MAX_SPEED)
                                     time+=Macro.SPEED;
                                 StarViev(time);
                             }
