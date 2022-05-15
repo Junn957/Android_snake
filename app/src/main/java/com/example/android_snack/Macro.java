@@ -9,7 +9,7 @@ public class Macro {
     /**
      * The constant Up：定义小蛇头部方向向上
      */
-    public static final int Up=0x11;
+    public static final int Up=0x113;
     /**
      * The constant ：定义小蛇头部方向向下
      */
