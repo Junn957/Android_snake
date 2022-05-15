@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".StarView"
     android:orientation="vertical"
-    android:background="@drawable/backgroud"
+    android:background="@drawable/background"
     >
     <Button
         android:id="@+id/star_game"
