@@ -106,7 +106,7 @@ public class Images extends View {
      * Size.//引用小蛇图片，小蛇头部上下左右方向，并设置图片大小
      */
     public void Size(){
-        headoptions=new BitmapFactory.Options();
+        BitmapFactory.Options headoptions=new BitmapFactory.Options();
         headoptions.inSampleSize= Macro.IMAGE_HEAD_SIZE;
         headoptions.inJustDecodeBounds=false;
         /**inJustDecodeBounds

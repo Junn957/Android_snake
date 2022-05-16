@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2340C4FF"
@@ -19,6 +20,7 @@
         android:id="@+id/MostScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/Score"
         android:text="@string/MOSTSCORE"
         android:textColor="#000000"
         android:textSize="20sp" />
@@ -26,7 +28,8 @@
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
-        android:layout_height="473dp"
+        android:layout_height="474dp"
+        android:layout_alignBottom="@id/RelativeLayout"
         android:background="@color/black">
 
         <TextView
@@ -40,9 +43,10 @@
     </FrameLayout>
 
     <RelativeLayout
+        android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="157dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent">
+        android:layout_alignBottom="@id/main_layout"
         android:layout_gravity="center">
 
         <Button
