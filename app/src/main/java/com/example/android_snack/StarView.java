@@ -2,9 +2,7 @@ package com.example.android_snack;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +12,7 @@ import android.widget.Button;
  */
 public class StarView extends AppCompatActivity implements View.OnClickListener {
 
-    private Button Starbutton,Sbutton,Backbutton;
+    private Button Startbutton,Sbutton,Backbutton;
     /**
      * The Shared：实例化存储对象
      */
@@ -30,13 +28,13 @@ public class StarView extends AppCompatActivity implements View.OnClickListener 
      * Init：初始化该活动界面信息
      */
     void Init(){
-        Starbutton=findViewById(R.id.star_game);
+        Startbutton =findViewById(R.id.star_game);
         Sbutton=findViewById(R.id.MostBUtton);
         Backbutton=findViewById(R.id.BackButton);
 
         shared=new SharedPre(this);
 
-        Starbutton.setOnClickListener(this);
+        Startbutton.setOnClickListener(this);
         Sbutton.setOnClickListener(this);
         Backbutton.setOnClickListener(this);
     }
