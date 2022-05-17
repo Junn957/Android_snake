@@ -54,8 +54,6 @@ public class StarView extends AppCompatActivity implements View.OnClickListener 
             case R.id.MostBUtton:
                 Sbutton.setText(Macro.H_MOST_SCORE+shared.read());
                 break;
-            case R.id.accelerate:
-                break;
         }
     }
 }
