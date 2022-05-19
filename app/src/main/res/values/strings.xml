@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android-Snack</string>
+    <string name="app_name">Android-Snake</string>
     <string name="star">游戏开始</string>
     <string name="stop">游戏暂停</string>
     <string name="restar">继续</string>

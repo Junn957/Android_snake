@@ -1,4 +1,4 @@
-package com.example.android_snack;
+package com.example.android_snake;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 /**
  * The type Star view：游戏开始界面
  */
-public class StarView extends AppCompatActivity implements View.OnClickListener {
+public class StartView extends AppCompatActivity implements View.OnClickListener {
 
     private Button Startbutton,Sbutton,Backbutton;
     /**
@@ -20,7 +21,7 @@ public class StarView extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_star_view);
+        setContentView(R.layout.activity_start_view);
         Init();
     }
 
@@ -45,7 +46,7 @@ public class StarView extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.star_game:
-                Intent intent=new Intent(StarView.this,MainActivity.class);
+                Intent intent=new Intent(StartView.this,MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.BackButton:

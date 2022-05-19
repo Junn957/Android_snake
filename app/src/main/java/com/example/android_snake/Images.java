@@ -1,4 +1,4 @@
-package com.example.android_snack;
+package com.example.android_snake;
 
 
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.view.View;
 public class Images extends View {
     private int BitmapX,BitmapY;
     private int FoodX,FoodY;
-    private int[] snackX=new int[Macro.MAX_LENGTH];
-    private int[] snackY=new int[Macro.MAX_LENGTH];
+    private int[] snakeX =new int[Macro.MAX_LENGTH];
+    private int[] snakeY =new int[Macro.MAX_LENGTH];
     private int length;
     private int direction;
     private boolean islive;
@@ -81,20 +81,20 @@ public class Images extends View {
      * Init.小蛇初始化
      */
     public void Init(){
-        BitmapX=Macro.INIT_SNACKX;
-        BitmapY=Macro.INIT_SNACKY;
+        BitmapX=Macro.INIT_SNAKEX;
+        BitmapY=Macro.INIT_SNAKEY;
         FoodX=Macro.INIT_FOODX;
         FoodY=Macro.INIT_FOODY;
 
-        snackX[0]=BitmapX;
-        snackY[0]=BitmapY;
+        snakeX[0]=BitmapX;
+        snakeY[0]=BitmapY;
         length =Macro.INIT_LENGHT;
         direction=Macro.Right;
         islive=true;
 
         for(int i = 1; i< length; i++){
-            snackX[i]=snackX[i-1]-Macro.UNIT;
-            snackY[i]=snackY[i-1];
+            snakeX[i]= snakeX[i-1]-Macro.UNIT;
+            snakeY[i]= snakeY[i-1];
         }
     }
 
@@ -161,36 +161,36 @@ public class Images extends View {
         canvas.drawBitmap(bitmapbody, FoodX, FoodY, paint);
 
         //画出小蛇头部位置
-        snackX[0]=BitmapX;
-        snackY[0]=BitmapY;
+        snakeX[0]=BitmapX;
+        snakeY[0]=BitmapY;
         switch (direction){
             case Macro.Right:
-                canvas.drawBitmap(rbitmaphead,snackX[0],snackY[0],paint);//蛇头往右，读取x、y坐标，填充画笔
+                canvas.drawBitmap(rbitmaphead, snakeX[0], snakeY[0],paint);//蛇头往右，读取x、y坐标，填充画笔
                 break;
             case Macro.Up:
-                canvas.drawBitmap(ubitmaphead,snackX[0],snackY[0],paint);
+                canvas.drawBitmap(ubitmaphead, snakeX[0], snakeY[0],paint);
                 break;
             case Macro.Left:
-                canvas.drawBitmap(lbitmaphead,snackX[0],snackY[0],paint);
+                canvas.drawBitmap(lbitmaphead, snakeX[0], snakeY[0],paint);
                 break;
             case Macro.Down:
-                canvas.drawBitmap(dbitmaphead,snackX[0],snackY[0],paint);
+                canvas.drawBitmap(dbitmaphead, snakeX[0], snakeY[0],paint);
                 break;
         }
         //画出小蛇身体的位置
         for(int i = 1; i< length; i++) {
-            canvas.drawBitmap(bitmapbody, snackX[i], snackY[i], paint);
+            canvas.drawBitmap(bitmapbody, snakeX[i], snakeY[i], paint);
         }
         //小蛇咬住身体了
         for(int i = 1; i< length; i++){
-            if(snackX[0]==snackX[i]&&snackY[0]==snackY[i]){
+            if(snakeX[0]== snakeX[i]&& snakeY[0]== snakeY[i]){
                 islive=false;
             }
         }
         //身体从最后一节向前一节位置移动
         for(int i = length; i>0; i--){
-            snackX[i]=snackX[i-1];
-            snackY[i]=snackY[i-1];
+            snakeX[i]= snakeX[i-1];
+            snakeY[i]= snakeY[i-1];
         }
         /**
          * Returns true if this bitmap has been recycled. If so, then it is an error

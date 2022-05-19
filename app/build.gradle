@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.android_snack"
+        applicationId "com.example.android_snake"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -26,7 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.example.android_snack'
+    namespace 'com.example.android_snake'
 }
 
 dependencies {

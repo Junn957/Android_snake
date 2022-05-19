@@ -1,4 +1,4 @@
-package com.example.android_snack;
+package com.example.android_snake;
 
 import android.content.Context;
 import android.content.SharedPreferences;

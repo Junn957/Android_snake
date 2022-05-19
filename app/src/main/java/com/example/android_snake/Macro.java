@@ -1,6 +1,4 @@
-package com.example.android_snack;
-
-import java.security.PublicKey;
+package com.example.android_snake;
 
 /**
  * The type Macro：宏的定义
@@ -39,13 +37,13 @@ public class Macro {
      */
     public static final int PERIOD=400;
     /**
-     * The constant INIT_SNACKX：小蛇初始头部的X坐标
+     * The constant INIT_SNAKEX：小蛇初始头部的X坐标
      */
-    public static final int INIT_SNACKX=600;
+    public static final int INIT_SNAKEX =600;
     /**
-     * The constant INIT_SNACKY：小蛇初始头部的Y坐标
+     * The constant INIT_SNAKEY：小蛇初始头部的Y坐标
      */
-    public static final int INIT_SNACKY=400;
+    public static final int INIT_SNAKEY =400;
     /**
      * The constant INIT_FOODX：食物初始的X坐标
      */

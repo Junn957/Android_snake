@@ -1,4 +1,4 @@
-package com.example.android_snack;
+package com.example.android_snake;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,12 +32,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean islive;
     private int score,time,mostscore;
     Images images;
-    MoveSnack movesnack;
+    MoveSnake movesnake;
     SharedPre shared;
     private Handler handler;
 
 
-    class MoveSnack extends Thread{
+    class MoveSnake extends Thread{
         @SuppressLint("HandlerLeak")
        // @Override
         public void run() {
@@ -123,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        movesnack=new MoveSnack();
-        movesnack.start();
+        movesnake =new MoveSnake();
+        movesnake.start();
         Init();
         StarViev(time);
         //将图片加载到布局中
