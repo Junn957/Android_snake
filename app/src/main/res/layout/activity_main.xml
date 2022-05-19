@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_gravity="center"
-            android:text="@string/promptstar"
+            android:text="@string/promptstart"
             android:textColor="#4CAF50"
             android:textSize="25sp" />
     </FrameLayout>

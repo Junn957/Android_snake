@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //方向控制
                         if(msg.what==Macro.Right) {
                             images.setBitmapX(images.getBitmapX() + Macro.UNIT);//The constant UNIT：定义小蛇移动的基本单位,x轴+一个移动单位
-                            images.setBitmapY(images.getBitmapY());             //y轴坐标不动
+                            images.setBitmapY(images.getBitmapY());
                         }
                         if(msg.what==Macro.Up) {
                             images.setBitmapY(images.getBitmapY()-Macro.UNIT);
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    BT_isstar.setText(R.string.restar);
+                                    BT_isstar.setText("重新开始");
                                     prompt.setText(R.string.promptrestar);
                                     prompt.setVisibility(View.VISIBLE);
                                     if(score>mostscore)
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     prompt.setVisibility(View.GONE);
                 }
                 else if(isstar==false&&islive==true){
-                    BT_isstar.setText(R.string.star);
+                    BT_isstar.setText("继续游戏");
                     prompt.setVisibility(View.VISIBLE);
                 }
                 else if(islive==false){

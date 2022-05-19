@@ -91,23 +91,23 @@ public class Images extends View {
         length =Macro.INIT_LENGHT;
         direction=Macro.Right;
         islive=true;
-
+         //画出初始的蛇身
         for(int i = 1; i< length; i++){
             snakeX[i]= snakeX[i-1]-Macro.UNIT;
-            snakeY[i]= snakeY[i-1];
+            snakeY[i]= snakeY[0];
         }
     }
 
 
-    private   Bitmap rbitmaphead,lbitmaphead,ubitmaphead,dbitmaphead,bitmapbody;
+    private Bitmap rbitmaphead,lbitmaphead,ubitmaphead,dbitmaphead,bitmapbody;
     private BitmapFactory.Options headoptions,bodyoptions;
 
     /**
-     * Size.//引用小蛇图片，小蛇头部上下左右方向，并设置图片大小
+     * Size.//引用小蛇图片，并设置图片大小
      */
     public void Size(){
         BitmapFactory.Options headoptions=new BitmapFactory.Options();
-        headoptions.inSampleSize= Macro.IMAGE_HEAD_SIZE;
+        headoptions.inSampleSize= Macro.IMAGE_HEAD_SIZE;   //蛇头缩放倍数
         headoptions.inJustDecodeBounds=false;
         /**inJustDecodeBounds
          *如果将这个值置为true，那么在解码的时候将不会返回bitmap，只会返回这个bitmap的尺寸。
@@ -119,26 +119,39 @@ public class Images extends View {
          * 例如，width=100，height=100，inSampleSize=2，那么就会将bitmap处理为，width=50，height=50，宽高降为1 / 2，像素数降为1 / 4。
          */
 
-        bodyoptions=new BitmapFactory.Options();//此类用于解码Bitmap时的各种参数控制
-        bodyoptions.inSampleSize=Macro.IMAGE_BODY_SIZE;
+        bodyoptions=new BitmapFactory.Options();
+        bodyoptions.inSampleSize=Macro.IMAGE_BODY_SIZE;        //蛇身的缩放倍数
         bodyoptions.inJustDecodeBounds=false;
 
-        rbitmaphead= BitmapFactory.decodeResource(this.getResources(),R.drawable.rhead, headoptions);
+
+
+        /**
+        *
+        *BitmapFactory.decodeResource（？，？）这个带两个参数的方法：第一个参数是包含你要加载的位图资源文件的对象（一般写成 getResources（）就ok了）；第二个时你需要加载的位图资源的Id。
+         BitmapFactory.decodeResource（？，？，？）带三个参数的方法：前两个和上面的方法一样。第三个参数应该是对你要加载的位图是否需要完整显示，如果你只需要部分，可以在这里定制。
+        * */
+
+        rbitmaphead= BitmapFactory.decodeResource(this.getResources(),R.drawable.rhead, headoptions); //
         ubitmaphead= BitmapFactory.decodeResource(this.getResources(),R.drawable.head, headoptions);
         lbitmaphead= BitmapFactory.decodeResource(this.getResources(),R.drawable.lhead, headoptions);
         dbitmaphead= BitmapFactory.decodeResource(this.getResources(),R.drawable.dhead, headoptions);
-        bitmapbody=BitmapFactory.decodeResource(this.getResources(),R.drawable.body,bodyoptions);
+        bitmapbody= BitmapFactory.decodeResource(this.getResources(),R.drawable.body,bodyoptions);
     }
 
     /**
      * onDraw//画蛇，将蛇画在屏幕上 canvas用于绘制背景的画布
+     * Canvas 和 Paint 之间的关系就像我们平时画画需要的画笔和画纸一样，我们画画无外乎也就需要这两个工具，
+     * 而这两个工具体现在 Android 中，就是我们的 Paint（画笔）和 Canvas（画纸，通常称为画布），
+     * 所以凡是跟要画的东西设置相关的，比如颜色、大小、宽度、样式、透明度等都是在 Paint 中设置的。
+     * 而凡是跟要画的成品，比如想画一个矩形、圆形、文字、路径等都是通过 Canvas 操作的。
+     * https://blog.csdn.net/AkaiC/article/details/80010241
+     * 2022.05.19  23:09
      */
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Paint paint=new Paint();//生成一个画笔对象
-
+        super.onDraw(canvas);      //Canvas（画纸，通常称为画布）
+        Paint paint=new Paint();   //生成一个画笔对象
         //画食物
 
         /**
@@ -158,7 +171,7 @@ public class Images extends View {
          * @param top The position of the top side of the bitmap being drawn
          * @param paint The paint used to draw the bitmap (may be null)
          */
-        canvas.drawBitmap(bitmapbody, FoodX, FoodY, paint);
+        canvas.drawBitmap(bitmapbody, FoodX, FoodY, paint);//画第一食物, 第一个参数为要绘制的bitmap对象，第四个参数为Paint对象。
 
         //画出小蛇头部位置
         snakeX[0]=BitmapX;
@@ -195,7 +208,7 @@ public class Images extends View {
         /**
          * Returns true if this bitmap has been recycled. If so, then it is an error
          * to try to access its pixels, and the bitmap will not draw.
-         **如果该位图已被回收，则返回true。如果是，则是一个错误
+         **如果该位图已被回收，则返回true。如果是，则是false
          *             *试图访问其像素，位图将不会绘制。
          *             *如果位图已经被回收，返回true
          * @return true if the bitmap has been recycled
